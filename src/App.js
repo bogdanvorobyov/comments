@@ -1,24 +1,26 @@
-import './App.css';
+// Реализация вывода комментариев сортирована по принципу "сначала новые". Так логичнее, интересней и сложней. 
+// В данном случае, возможно, было бы лучше получить все комментарии без сортировки на сервере, залить их в хранилище через Redux, и построить полноценную пагинацию через реакт; 
+
+
+import './App.css'; 
 import { useEffect, useState} from 'react'
-import NewComment from './components/NewComment'
-import MoreComment from './components/MoreComment'
-import Pagination from './components/Pagination'
-
-
+import NewComment from './components/NewComment' // Отправка нового комментария
+import MoreComment from './components/MoreComment' // Реализация кнопки "показать еще"
+import Pagination from './components/Pagination'// Пагинация 
 
 
 function App() {
 
-const [comments,setComments]=useState([])
-const [data,setData]=useState()
-const [countComment, setCountComment] = useState(2)
-const [classButton,setClassbutton]=useState('')
-const [currentPage,setCurrentPage]=useState(2); 
+const [comments,setComments]=useState([]) //Вывод комментариев
+const [data,setData]=useState() // объект json 
+const [countComment, setCountComment] = useState(2) // сбор страниц для пагинации
+const [classButton,setClassbutton]=useState('') // скрытие кнопки 
+const [currentPage,setCurrentPage]=useState(2); // вывод текущей страницы
 
 
 useEffect(()=>{
 
-  fetch(`https://jordan.ashton.fashion/api/goods/30/comments`)
+  fetch(`https://jordan.ashton.fashion/api/goods/30/comments`) 
   .then(response=> response.json())
   .then(response =>{
       fetch(response.last_page_url)
@@ -30,7 +32,7 @@ useEffect(()=>{
         })
   })
 
-},[countComment])
+},[countComment]) 
 
   return (
     <div>
