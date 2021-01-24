@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+.hiden{ 
+    display: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav{ 
+    text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App{ 
+    text-align: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.comments-h2{ 
+    text-align: left;
+    padding: 1em
 }
-
-.App-link {
-  color: #61dafb;
+.liveFeedback{ 
+    padding:1em 0;
+    background-color: rgb(219, 219, 209);
+    margin-bottom: 1em;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-com{ 
+    list-style-type:none;
+    margin-left:0;
+    
+}
+.list-com li { 
+    border: black solid .5px;
+    margin: .5em auto;
+    background-color: rgb(219, 219, 209);
+}
+.comments-data{ 
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.name-comment{
+    text-align: left;
+    padding: .2em;
+}
+.text-comment{
+    padding: .5em;
+}
+.button-more{ 
+    height: 3em;
+    width: 15%;
+    margin: 2em auto;
+}
+.page-item{
+    font-size: large;
+    padding:.5em;
+    margin-bottom: .5em;
 }
